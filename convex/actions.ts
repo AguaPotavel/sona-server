@@ -9,7 +9,7 @@ export const getUserBySummonerIdInternal = internalQuery({
     const user = await ctx.db
       .query("users")
       .filter((q) => q.eq(q.field("summonerId"), args.summonerId))
-      .collect();
+      .first();
     return user;
   },
 });

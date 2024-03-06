@@ -63,6 +63,7 @@ export const updateMatch = mutation({
   args: {
     matchId: v.number(),
     isOver: v.boolean(),
+    channelDeleted: v.optional(v.boolean()),
   },
   handler: async (ctx, args) => {
     const match = await ctx.db
@@ -72,6 +73,7 @@ export const updateMatch = mutation({
     if (match !== null) {
       const matchId = await ctx.db.patch(match._id, {
         isOver: args.isOver,
+        channelDeleted: args.channelDeleted ? args.channelDeleted : false,
       });
 
       return matchId;

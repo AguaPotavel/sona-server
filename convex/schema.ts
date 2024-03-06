@@ -11,6 +11,7 @@ export default defineSchema({
   matchData: defineTable({
     matchId: v.number(),
     isOver: v.boolean(),
+    channelDeleted: v.optional(v.boolean()),
     teams: v.object({
       teamOne: v.array(
         v.object({
