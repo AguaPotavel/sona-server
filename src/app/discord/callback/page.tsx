@@ -117,7 +117,7 @@ export default function Page() {
             </p>
           </div>
           <div className="flex py-2 w-full max-w-[500px] flex-row gap-2">
-            <Input ref={refInput} type="text" placeholder="informe o token" />
+            <Input ref={refInput} type="password" placeholder="informe o token" />
             <Button onClick={updateUserWithDiscord} className="w-24 h-10">
               Salvar
             </Button>
