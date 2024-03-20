@@ -55,7 +55,7 @@ const config = {
         },
         custom: {
           gray: colors.gray,
-          primary: colors.emerald,
+          primary: colors.indigo,
         },
       },
       borderRadius: {
