@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { SonaLogo } from "./_shared/components/ui/sona-logo";
 import { Button } from "./_shared/components/ui/button";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { LazyYoutube } from "@/app/get-started/page";
+import { LazyYoutube } from "@/app/_shared/components/lazyYoutube";
 
 export default function Home() {
   const router = useRouter();
