@@ -57,7 +57,7 @@ export default function Page() {
               Vocês são uma empresa?
             </AccordionTrigger>
             <AccordionContent>
-              Na verdade somos apenas 3 amigos, fizemos o app como meio de estudos e solucionar um problema que a Riot aparentemente não se importa, que é a coordenação nas partidas.
+              Na desenvolvi o app sozinho, contei com a ajuda de um amigo para escolhas de tecnologias e minha namorada para auxiliar com alguns recursos, fiz o app como meio de estudos e solucionar um problema que a Riot aparentemente não se importa, que é a coordenação nas partidas.
             </AccordionContent>
           </AccordionItem>
 

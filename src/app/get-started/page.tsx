@@ -2,13 +2,50 @@
 
 import { Button } from "../_shared/components/ui/button";
 import { useRouter } from "next/navigation";
+import React, { useState, useEffect, useRef } from "react";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/app/_shared/components/ui/accordion";
+export const LazyYoutube = ({ videoId }: { videoId: string}) => {
+  const [show, setShow] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShow(true);
+        }
+      },
+      { rootMargin: "0px 0px 100px 0px" }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [ref]);
+
+  return (
+    <div ref={ref} className="w-full h-full flex justify-center items-center">
+      {show && (
+        <iframe
+          className="w-full aspect-video"
+          src={`https://www.youtube.com/embed/${videoId}`}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      )}
+    </div>
+  );
+}
+
+{/* <iframe width="560" height="315" src="https://www.youtube.com/embed/F6JpOxfMgvs?si=q7HmUiFRIrGRjKyE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
 
 export default function Page() {
   const router = useRouter();
@@ -30,8 +67,8 @@ export default function Page() {
           <span className="text-2xl font-bold">Como utilizar</span>
         </h1>
 
-        <div className="w-full h-full flex justify-center items-center">
-            Em Breve
+        <div className="w-full h-full flex-1 flex justify-center items-center">
+            <LazyYoutube videoId="F6JpOxfMgvs?si=q7HmUiFRIrGRjKyE"/>
         </div>
       </section>
     </main>

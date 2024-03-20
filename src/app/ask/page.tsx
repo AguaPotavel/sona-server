@@ -64,12 +64,11 @@ export default function Page() {
             </AccordionTrigger>
             <AccordionContent>
               Após a partida acabar o bot ja irá saber que a partida acabou, nos
-              próximos 5 minutos ele irá mover todos os players para a sala de
-              espera.
+              próximos 5 minutos ele irá deletar os canais da partida.
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem value="item-5">
+          {/* <AccordionItem value="item-5">
             <AccordionTrigger>
               Tive um player tóxico no meu time, oque posso fazer?
             </AccordionTrigger>
@@ -78,7 +77,7 @@ export default function Page() {
               irá registrar o report e se o player for recorrente iremos avaliar
               e se necessário banir o mesmo, como utilizamos o ID do usuário no lol ele não poderá mais se cadastrar com a mesma conta.
             </AccordionContent>
-          </AccordionItem>
+          </AccordionItem> */}
         </Accordion>
       </section>
     </main>
