@@ -20,6 +20,8 @@ function tokenParam() {
   }
 }
 
+const secret = process.env.NEXT_PUBLIC_SONA_DISCORD_OAUTH!
+
 type Data = {
   discordId: string;
   discordName: string;
@@ -52,7 +54,7 @@ export default function Page() {
   async function updateUserWithDiscord() {
     if (refInput.current === null || data === null) return;
 
-    const encrypted = await CryptoJs.AES.decrypt(refInput.current.value, process.env.NEXT_PUBLIC_SONA_DISCORD_OAUTH)
+    const encrypted = await CryptoJs.AES.decrypt(refInput.current.value, secret)
 
     if(encrypted === null || encrypted === undefined) {
       setState("error");
