@@ -52,7 +52,7 @@ export default function Page() {
   async function updateUserWithDiscord() {
     if (refInput.current === null || data === null) return;
 
-    const encrypted = await CryptoJs.AES.decrypt(refInput.current.value, "sona-secret-key")
+    const encrypted = await CryptoJs.AES.decrypt(refInput.current.value, process.env.NEXT_PUBLIC_SONA_SECRET_DISCORD_OAUTH)
 
     if(encrypted === null || encrypted === undefined) {
       setState("error");
