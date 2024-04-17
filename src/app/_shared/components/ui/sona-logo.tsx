@@ -163,7 +163,7 @@ const SonaLogo = React.forwardRef<HTMLDivElement, InputProps>(
       <motion.div
         layout
         className={cn(
-          "flex flex-col p-2 min-h-[200px] items-center justify-center overflow-hidden",
+          "flex flex-col p-2 min-h-[100px] items-center justify-center overflow-hidden",
           className
         )}
       >
