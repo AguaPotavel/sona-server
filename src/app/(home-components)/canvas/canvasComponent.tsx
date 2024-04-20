@@ -1,20 +1,16 @@
 "use client";
 
-import React, { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
 import {
-  useGLTF,
-  MeshTransmissionMaterial,
   ContactShadows,
-  Grid,
-  Environment,
-  PerspectiveCamera,
+  Html,
   OrbitControls,
-  Html
+  PerspectiveCamera,
+  useGLTF,
 } from "@react-three/drei";
-import { BufferGeometry, Object3D, Object3DEventMap } from "three";
+import { Canvas, Object3DProps, useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 
-import { SonaLogo } from "@/app/_shared/components/ui/sona-logo"
+import { SonaLogo } from "@/app/_shared/components/ui/sona-logo";
 
 export default function CanvasComponent({
   sizes,
@@ -25,7 +21,6 @@ export default function CanvasComponent({
     <div style={{ width: `${sizes.width}px`, height: `${sizes.height}px` }}>
       <Canvas camera={{ position: [0, 10, 8], fov: 30 }} flat color="#fff">
         {/* <ambientLight intensity={1} /> */}
-        {/* <fog attach="fog" args={['black', 15, 22.5]} /> */}
 
         <PerspectiveCamera
           makeDefault
@@ -51,14 +46,14 @@ export default function CanvasComponent({
           castShadow
           color={"#afafaf"}
         />
-        
+
         <OrbitControls
           autoRotate
           autoRotateSpeed={0.05}
           enableZoom={false}
           makeDefault
           target={[0, 0, 0]}
-          minPolarAngle={Math.PI / 2.5} 
+          minPolarAngle={Math.PI / 2.5}
           maxPolarAngle={Math.PI / 5}
         />
 
@@ -77,7 +72,7 @@ export default function CanvasComponent({
   );
 }
 
-function LeagueLogo(props: any) {
+function LeagueLogo(props: Object3DProps) {
   const ref = useRef<any>();
   const { nodes, materials } = useGLTF("/gaming_laptop.glb");
 
@@ -111,43 +106,41 @@ function LeagueLogo(props: any) {
       >
         <mesh
           receiveShadow
-        //   castShadow
+          //   castShadow
           //@ts-ignore
           geometry={nodes.Object_4.geometry}
           material={newMaterials.Material001}
         ></mesh>
         <mesh
           receiveShadow
-        //   castShadow
+          //   castShadow
           //@ts-ignore
           geometry={nodes.Object_5.geometry}
           material={newMaterials.Material001}
         ></mesh>
         <mesh
           receiveShadow
-        //   castShadow
+          //   castShadow
           //@ts-ignore
           geometry={nodes.Object_6.geometry}
           material={materials.Material}
         ></mesh>
         <mesh
           receiveShadow
-        //   castShadow
+          //   castShadow
           //@ts-ignore
           geometry={nodes.Object_7.geometry}
           material={materials.Material}
         >
           <Html
             className="content"
-            // style={{width: "150px", height:"79px"}}
-            rotation={[-Math.PI/2, 0, -4.71]}
-            position={[-1.9, .22, 0.02]}
+            rotation={[-Math.PI / 2, 0, -4.71]}
+            position={[-1.9, 0.22, 0.02]}
             transform
             occlude
-            // castShadow
             distanceFactor={2}
           >
-            <ContentPage  />
+            <ContentPage />
           </Html>
         </mesh>
         <mesh
@@ -166,7 +159,7 @@ function LeagueLogo(props: any) {
         ></mesh>
         <mesh
           receiveShadow
-        //   castShadow
+          //   castShadow
           //@ts-ignore
           geometry={nodes.Object_10.geometry}
           material={materials.Material}
@@ -230,8 +223,8 @@ function LeagueLogo(props: any) {
         ></mesh>
         <mesh
           receiveShadow
-          //@ts-ignore
           castShadow
+          //@ts-ignore
           geometry={nodes.Object_19.geometry}
           material={newMaterials.Material005}
         ></mesh>
@@ -240,11 +233,18 @@ function LeagueLogo(props: any) {
   );
 }
 
-function ContentPage({ onPointerOver, onPointerOut} : { onPointerOver?: MouseEvent, onPointerOut?: MouseEvent}){
-    return(
+function ContentPage({
+  onPointerOver,
+  onPointerOut,
+}: {
+  onPointerOver?: MouseEvent;
+  onPointerOut?: MouseEvent;
+}) {
+  return (
     <div className="w-full h-full flex text-xs bg-slate-950 justify-center">
-        <SonaLogo />
-    </div>)
+      <SonaLogo />
+    </div>
+  );
 }
 
 useGLTF.preload("/gaming_laptop.glb");

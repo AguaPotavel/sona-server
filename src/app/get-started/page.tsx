@@ -12,7 +12,7 @@ export default function Page() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col bg-slate-950 items-center justify-between p-24">
       <section className="flex flex-row w-full justify-start items-center max-w-[800px]">
         <Button className="mt-4" variant={"secondary"} onClick={handleGoBack}>
           Voltar para home
@@ -21,7 +21,7 @@ export default function Page() {
 
       <section className="flex flex-col flex-1 w-full justify-center items-center max-w-[800px]">
         <h1 className="my-4">
-          <span className="text-2xl font-bold">Como utilizar</span>
+          <span className="text-2xl font-bold">Veja esse video demo:</span>
         </h1>
 
         <div className="w-full h-full flex-1 flex justify-center items-center">

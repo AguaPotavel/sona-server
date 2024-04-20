@@ -18,7 +18,7 @@ export default function Page() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col bg-slate-950  items-center justify-between p-24">
       <section className="flex flex-row w-full justify-start items-center max-w-[800px]">
         <Button className="mt-4" variant={"secondary"} onClick={handleGoBack}>
           Voltar para home
@@ -51,26 +51,6 @@ export default function Page() {
               correta.
             </AccordionContent>
           </AccordionItem>
-
-          <AccordionItem value="item-3">
-            <AccordionTrigger>
-              Vocês são uma empresa?
-            </AccordionTrigger>
-            <AccordionContent>
-              Na desenvolvi o app sozinho, contei com a ajuda de um amigo para escolhas de tecnologias e minha namorada para auxiliar com alguns recursos, fiz o app como meio de estudos e solucionar um problema que a Riot aparentemente não se importa, que é a coordenação nas partidas.
-            </AccordionContent>
-          </AccordionItem>
-
-          {/* <AccordionItem value="item-4">
-            <AccordionTrigger>
-              ?
-            </AccordionTrigger>
-            <AccordionContent>
-              Após a partida acabar o bot ja irá saber que a partida acabou, nos
-              próximos 5 minutos ele irá mover todos os players para a sala de
-              espera.
-            </AccordionContent>
-          </AccordionItem> */}
         </Accordion>
       </section>
     </main>
