@@ -18,7 +18,7 @@ export default function Page() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center bg-slate-950 justify-between p-24">
       <section className="flex flex-row w-full justify-start items-center max-w-[800px]">
         <Button className="mt-4" variant={"secondary"} onClick={handleGoBack}>
           Voltar para home
@@ -67,17 +67,6 @@ export default function Page() {
               próximos 5 minutos ele irá deletar os canais da partida.
             </AccordionContent>
           </AccordionItem>
-
-          {/* <AccordionItem value="item-5">
-            <AccordionTrigger>
-              Tive um player tóxico no meu time, oque posso fazer?
-            </AccordionTrigger>
-            <AccordionContent>
-              Após acabar a partida você pode reportar o player tóxico, e o bot
-              irá registrar o report e se o player for recorrente iremos avaliar
-              e se necessário banir o mesmo, como utilizamos o ID do usuário no lol ele não poderá mais se cadastrar com a mesma conta.
-            </AccordionContent>
-          </AccordionItem> */}
         </Accordion>
       </section>
     </main>
