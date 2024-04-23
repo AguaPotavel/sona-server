@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect } from "react";
 
 import { Button } from "../_shared/components/ui/button";
+import HomeAnimation from "./homeAnimation";
 import CanvasComponent from "./canvas/canvasComponent";
 import useMeasure from "react-use-measure";
 
@@ -31,9 +32,11 @@ export default function HomeDescription() {
         ref={ref}
         className="hidden text-6xl min-h-[600px] max-w-[800px] flex-1 flex flex-col items-center justify-center px-4 lg:mt-36 lg:flex"
       >
-        <Suspense fallback={<div className="text-indigo-500">carregando...</div>}>
+        {/* <Suspense fallback={<div className="text-indigo-500">carregando...</div>}>
           <CanvasComponent sizes={{ width: width, height: height }} />
-        </Suspense>
+        </Suspense> */}
+
+        <HomeAnimation />
       </div>
     </section>
   );
