@@ -17,10 +17,10 @@ export default function HomeDescription() {
     <section className="h-svh w-full justify-center items-center flex flew-row px-14 lg: xl:px-24 gap-10 font-body">
       <motion.div initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0, transition: { delay: 0, duration: .3}}} className="text-5xl justify-center flex flex-1 flex-col px-4 lg:text-6xl">
         <span className="text-slate-50">
-          <strong className="text-indigo-500 font-display bg-slate-50 px-2 mr-2 lg:text-8xl">Sona</strong>, dando voz
+          <strong className="text-indigo-500 font-display bg-slate-50 px-2 mr-2 lg:text-8xl">Sona</strong>, dando voz as suas
         </span>
-        <span className="text-slate-50 leading-relaxed">
-          as suas <strong className="text-slate-100 text-5xl lg:text-6xl bg-indigo-500 px-2 mr-2">Rankeadas!</strong>
+        <span className="text-slate-100 text-5xl lg:text-6xl bg-indigo-500 w-fit px-2 mr-2 font-bold">
+          Rankeadas!
         </span>
         <span className="text-xl lg:text-3xl text-indigo-500 mb-10 lg:mb-4">Deixe os pings pra tras!</span>
 
