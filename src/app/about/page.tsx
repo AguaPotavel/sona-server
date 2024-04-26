@@ -18,7 +18,7 @@ export default function Page() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col bg-slate-950  items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col bg-slate-950 p-8 items-center justify-between lg:p-24">
       <section className="flex flex-row w-full justify-start items-center max-w-[800px]">
         <Button className="mt-4" variant={"secondary"} onClick={handleGoBack}>
           Voltar para home

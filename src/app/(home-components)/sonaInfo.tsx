@@ -3,7 +3,7 @@ import React from "react";
 export default function SonaInfo() {
   return (
     <section className="min-svh h-fit w-full flex flew-col items-center justify-center font-body flex-wrap py-10 px-14 xl:px-24 gap-4">
-      <h1 className="font-bold text-6xl">
+      <h1 className="font-bold text-6xl leading-relaxed">
         Oque é <strong className="text-indigo-600 bg-slate-100 px-2">Sona?</strong>
       </h1>
 
